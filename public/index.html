@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💬</text></svg>">
+
+
+  <link rel="stylesheet" href="style.css" />
+  <title>V-Chat</title>
+</head>
+
+<body class="dark">
+  <div class="app-wrapper">
+    <h1 class="title">V-Chat 🗨️</h1>
+
+    <!-- Dark mode toggle -->
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+    <div class="main">
+      <div class="name">
+        <span><i class="far fa-user"></i></span>
+       <input
+        type="text"
+        id="name-input"
+        class="name-input"
+        placeholder="Enter your name"
+        maxlength="20"
+      />
+
+      </div>
+
+   <div class="room-wrapper">
+    <label for="room-select">Room</label>
+    <select id="room-select">
+      <option value="general">General</option>
+      <option value="developers">Developers</option>
+      <option value="random">Random</option>
+    </select>
+    </div>
+
+        <div class="users-panel">
+      <h4>Online Users</h4>
+      <ul id="users-list"></ul>
+    </div>
+
+
+      <!-- MESSAGES -->
+      <ul class="message-container" id="message-container">
+        <!-- <li class="message-left">
+          <p class="message">
+            lorem ipsum
+            <span>bluebird ● 26 july 10.40</span>
+          </p>
+        </li>
+
+        <li class="message-right">
+          <p class="message">
+            lorem ipsum
+            <span>bluebird ● 26 july 10.40</span>
+          </p>
+        </li>
+
+        <li class="message-feedback">
+          <p class="feedback" id="feedback">
+            killer is typing a message
+          </p>
+        </li> -->
+      </ul>
+
+      <!-- MESSAGE FORM -->
+      <form class="message-form" id="message-form">
+        <input
+          type="text"
+          name="message"
+          id="message-input"
+          class="message-input"
+        />
+        <div class="v-divider"></div>
+        <button type="submit" class="send-button">
+          send <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- CLIENT COUNT -->
+    <h3 class="clients-total" id="client-total">Total Members: 2</h3>
+    
+    <!-- SOCKET.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- MOMENT -->
+     <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
+      integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
+      crossorigin="anonymous"
+    >
+  </script>
+
+    <script src="main.js"></script>
+    
+
+  <!-- Dark mode toggle logic -->
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggleBtn.textContent =
+        document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
+
+  </body>
+</html>
