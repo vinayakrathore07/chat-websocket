@@ -14,7 +14,6 @@ The project focuses on real-world WebSocket communication, event-driven architec
 - ✍️ Typing indicators
 - 👥 Online users list per room
 - 🌙 Dark mode UI
-- 📱 Responsive UI (desktop & mobile)
 - 🌐 Deployed for public access
 
 ---
